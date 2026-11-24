@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Token Launch Radar — pre-token protocols ranked by implied value</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="brand">
+    <span class="blip" aria-hidden="true"></span>
+    <div>
+      <h1>Token Launch Radar</h1>
+      <p class="sub">Protocols that record no token yet, ranked by what a launch could be worth — and how to farm each one.</p>
+    </div>
+  </div>
+  <div class="stats" id="stats"></div>
+</header>
+
+<section class="model-note" id="model-note"></section>
+
+<nav class="controls" aria-label="Board controls">
+  <input id="q" type="search" placeholder="Search name or slug…" autocomplete="off">
+  <select id="f-category" aria-label="Filter by category"><option value="">All categories</option></select>
+  <select id="f-chain" aria-label="Filter by chain"><option value="">All chains</option></select>
+  <label class="toggle"><input id="f-watch" type="checkbox"> Watchlist only</label>
+  <label class="toggle"><input id="f-view-live" type="checkbox"> Show already-tokened</label>
+  <span class="count" id="count"></span>
+</nav>
+
+<main>
+  <table class="board" id="board">
+    <thead>
+      <tr>
+        <th data-sort="rank" class="num">Rank</th>
+        <th data-sort="name">Protocol</th>
+        <th data-sort="category">Category</th>
+        <th data-sort="tvl_usd" class="num">TVL</th>
+        <th data-sort="change_7d" class="num">7d %</th>
+        <th data-sort="age_days" class="num">Tokenless age</th>
+        <th data-sort="implied_value_usd" class="num">Implied value</th>
+      </tr>
+    </thead>
+    <tbody id="rows"></tbody>
+  </table>
+  <section class="detail" id="detail" hidden></section>
+  <p class="foot" id="foot"></p>
+</main>
+
+<script src="../data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
